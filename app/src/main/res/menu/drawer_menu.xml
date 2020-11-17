@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity = "right"
+    android:textAlignment = "gravity"
+    >
+
+    <item
+        android:title="home"
+        android:id="@+id/home"
+        android:gravity ="right"
+        android:textAlignment = "gravity"/>
+    <item
+        android:title="toggle hw acceleration"
+        android:id="@+id/enable_hw"
+        android:gravity ="right"
+        android:textAlignment = "gravity"/>
+    <item
+        android:title="change theme"
+        android:id="@+id/changeTheme"
+        android:gravity ="right"
+        android:textAlignment = "gravity"/>
+    <item
+        android:title="dark theme"
+        android:id="@+id/darkTheme"
+        android:gravity ="right"
+        android:textAlignment = "gravity"/>
+    <item
+        android:title="about"
+        android:id="@+id/about"
+        android:gravity ="right"
+        android:textAlignment = "gravity"/>
+</menu>

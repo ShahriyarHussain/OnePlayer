@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layoutDirection="ltr"
+    android:id="@+id/drawer"
+    android:fitsSystemWindows="true">
+
+
+    <include
+        layout="@layout/drawer_toolbar"
+        android:layout_width="31dp"
+        android:layout_height="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272"/>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/drawer_header"
+        app:itemTextAppearance="@style/montserrat_font"
+        app:menu="@menu/drawer_menu"
+        android:layout_gravity ="end"
+        android:gravity = "left"
+        android:layoutDirection="rtl"/>
+
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

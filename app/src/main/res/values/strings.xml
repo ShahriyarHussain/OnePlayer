@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OnePlayer</string>
+    <string name="welcome">welcome!</string>
+    <string name="message">want to see something interesting ?</string>
+    <string name="title">OnePlayer</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+</resources>
