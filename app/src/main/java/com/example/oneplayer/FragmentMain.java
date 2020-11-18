@@ -26,6 +26,11 @@ public class FragmentMain extends Fragment {
                 openVideoActivity();
             }
         });
+        /*
+        MainActivity themeChanger = new MainActivity();
+        Themes themes = new Themes();
+
+        themeChanger.changeThemes(themes.getTheme());*/
 
         return view;
     }

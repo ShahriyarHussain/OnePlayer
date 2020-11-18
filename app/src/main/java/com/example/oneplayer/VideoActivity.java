@@ -1,14 +1,12 @@
 package com.example.oneplayer;
 
 import android.content.pm.ActivityInfo;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -22,23 +20,14 @@ import com.google.android.exoplayer2.extractor.ExtractorsFactory;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.TrackGroupArray;
-import com.google.android.exoplayer2.source.dash.DashMediaSource;
-import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource;
-import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.BandwidthMeter;
-import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
-import com.google.android.exoplayer2.upstream.TransferListener;
-import com.google.android.exoplayer2.util.Util;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -79,23 +68,8 @@ public class VideoActivity extends AppCompatActivity {
 
         ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
 
-        /*New Test codes starts
-        DefaultHttpDataSourceFactory mediaDataSourceFactory = new DefaultHttpDataSourceFactory(
-                Util.getUserAgent(this, "OnePlayer"), (TransferListener<? super DataSource>) bandwidthMeter);
-        // do not meter bandwidth for manifest loading
-        DefaultHttpDataSourceFactory manifestDataSourceFactory = new DefaultHttpDataSourceFactory(
-                Util.getUserAgent(this, "OnePlayer"));
-        // create the media source for DASH
-        MediaSource mediaSource = new DashMediaSource.Factory(
-                new DefaultDashChunkSource.Factory(mediaDataSourceFactory),
-                manifestDataSourceFactory)
-                .createMediaSource(videourl, null, null);
-        //New Test codes ends*/
-
-        //New Test code 2 starts
-        //New Test code 2 ends
-       MediaSource mediaSource = new ExtractorMediaSource
-                (videourl,factory, extractorsFactory, null, null);
+        MediaSource mediaSource = new ExtractorMediaSource
+                (videourl, factory, extractorsFactory, null, null);
 
         playerView.setPlayer(simpleExoPlayer);
         playerView.setKeepScreenOn(true);
